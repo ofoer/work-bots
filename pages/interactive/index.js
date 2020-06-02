@@ -3,11 +3,11 @@ import Head from 'next/head'
 import BaseLayout from "../../layout/Base"
 
 
-const LifeIndex = ({story}) =>{
+const InteractiveIndex = ({story}) =>{
 
   return  (
-    <BaseLayout tabIndex="life">
-      LifeIndex
+    <BaseLayout tabIndex="interactive">
+      InteractiveIndex
     </BaseLayout>
   )
 }
@@ -22,4 +22,4 @@ export async function getServerSideProps(context){
  }
 }
 
-export default LifeIndex
+export default InteractiveIndex

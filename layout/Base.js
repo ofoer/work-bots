@@ -9,7 +9,7 @@ import SentimentSatisfiedAltIcon from '@material-ui/icons/SentimentSatisfiedAlt'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 
 
-const BaseLayout = ({children, title="就是甜"}) =>{
+const BaseLayout = ({children, title="就是甜", tabIndex}) =>{
   const [value, setValue] = React.useState('recents');
 
   const handleChange = (event, newValue) => {
@@ -23,12 +23,12 @@ const BaseLayout = ({children, title="就是甜"}) =>{
       <div className="pb-16">
       {children}
       </div>
-      <BottomNavigation value={value} className="shadow fixed bottom-0 left-0 w-full" onChange={handleChange}>
-        <BottomNavigationAction label="首页" value="recents" icon={<RestoreIcon />} />
+      <BottomNavigation value={tabIndex} className="shadow fixed bottom-0 left-0 w-full">
         
-        <BottomNavigationAction label="生活" value="favorites" icon={<LocalBar />} />
-        <BottomNavigationAction  label="互动" value="nearby" icon={<FavoriteBorderIcon />} />
-        <BottomNavigationAction label="我" value="folder" icon={<SentimentSatisfiedAltIcon />} />
+        <BottomNavigationAction href="/" label="首页" value="front" icon={<RestoreIcon />} />
+        <BottomNavigationAction href="/interactive" label="互动" value="interactive" icon={<FavoriteBorderIcon />} />
+        <BottomNavigationAction href="/life" label="生活" value="life" icon={<LocalBar />} />
+        <BottomNavigationAction href="/me" label="我" value="me" icon={<SentimentSatisfiedAltIcon />} />
       </BottomNavigation>
     </>
   )

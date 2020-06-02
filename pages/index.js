@@ -11,7 +11,7 @@ const Front = ({stories}) =>{
   const [ state, setState ] = useState({items: stories})
   const { items } = state
   return  (
-    <BaseLayout title="就是甜！-- 情侣日常、给女朋友讲故事、有哪些适合每天睡前给女朋友讲的故事、有哪些适合说给女朋友的睡前温暖小故事">
+    <BaseLayout tabIndex="front" title="就是甜！-- 情侣日常、给女朋友讲故事、有哪些适合每天睡前给女朋友讲的故事、有哪些适合说给女朋友的睡前温暖小故事">
       <Container className="pb-5" maxWidth="md">  
         <Typography variant="subtitle2" className="pt-4" gutterBottom>5月20日 星期三</Typography>
         <Typography variant="h5" style={{fontWeight: 'bold'}} component="h1">就是甜</Typography>
