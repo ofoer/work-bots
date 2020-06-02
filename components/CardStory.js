@@ -1,14 +1,11 @@
-import Link from 'next/link'
-import { Card, CardContent, Typography,makeStyles,  CardMedia, CardActionArea }  from "@material-ui/core"
 
+import { Card, CardContent, Typography,makeStyles,  CardMedia, CardActionArea }  from "@material-ui/core"
+import Link from "next/link"
 
 const useStyles = makeStyles((theme)=>({
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
-  },
-  root: {
-    marginTop: theme.spacing(2)
   }
 }));
 
@@ -16,13 +13,17 @@ const CardStory = ({id, title, banner, desc}) =>{
   const classes = useStyles()
   return (
     <Link href={"/stories/[id]"} as={`/stories/${id}`}>
-      <Card className={classes.root}>
+      <a className="no-underline">
+      <Card className="mt-4">
         <CardActionArea>
-          <CardMedia
+          {/* <CardMedia
               className={classes.media}
               image={banner}
               title="Contemplative Reptile"
-            />
+            /> */}
+          <div className="w-full relative" style={{paddingBottom: "56.25%"}}>
+            <img className="w-full h-full absolute left-0 top-0 object-cover" src={banner} alt={title}  />
+          </div>
           <CardContent>
             <Typography gutterBottom variant="h6" component="h2">
               {title}
@@ -37,6 +38,7 @@ const CardStory = ({id, title, banner, desc}) =>{
           </CardContent>
         </CardActionArea>
       </Card>
+      </a>
     </Link>
   )
 }
