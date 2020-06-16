@@ -1,5 +1,5 @@
 
-import { Card, CardContent, Typography,makeStyles,  CardMedia, CardActionArea }  from "@material-ui/core"
+import { Card, CardContent, Typography,makeStyles, CardActionArea }  from "@material-ui/core"
 import Link from "next/link"
 
 const useStyles = makeStyles((theme)=>({
@@ -16,11 +16,6 @@ const CardStory = ({id, title, banner, desc}) =>{
       <a className="no-underline">
       <Card className="mt-4">
         <CardActionArea>
-          {/* <CardMedia
-              className={classes.media}
-              image={banner}
-              title="Contemplative Reptile"
-            /> */}
           <div className="w-full relative" style={{paddingBottom: "56.25%"}}>
             <img className="w-full h-full absolute left-0 top-0 object-cover" src={banner} alt={title}  />
           </div>
@@ -30,10 +25,10 @@ const CardStory = ({id, title, banner, desc}) =>{
             </Typography>
 
             <div className="relative">
-              <Typography variant="body2" color="textSecondary" component="p" className="text-justify h-16 overflow-hidden">
+              <Typography variant="body2" color="textSecondary" component="p" className="text-justify overflow-hidden">
                 {desc}
               </Typography>
-              <div className="absolute bottom-0 left-0 w-full h-12" style={{backgroundImage: "linear-gradient(to bottom, rgba(255,255,255,0.7) , #fff)"}}></div>
+              {/* <div className="absolute bottom-0 left-0 w-full h-6" style={{backgroundImage: "linear-gradient(to bottom, rgba(255,255,255,0.7) , #fff)"}}></div> */}
             </div>
           </CardContent>
         </CardActionArea>
