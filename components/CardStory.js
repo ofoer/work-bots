@@ -1,6 +1,6 @@
 
 import { Card, CardContent, Typography,makeStyles, CardActionArea }  from "@material-ui/core"
-import Link from "next/link"
+// import Link from "next/link"
 
 const useStyles = makeStyles((theme)=>({
   media: {
@@ -9,49 +9,53 @@ const useStyles = makeStyles((theme)=>({
   }
 }));
 
-const CardStory = ({id, title, banner, desc}) =>{
+const CardStory = ({ item, baseUrl, onChange }) =>{
   const classes = useStyles()
+  const { title, desc, banner } = item
   return (
-    <Link href={"/stories/[id]"} as={`/stories/${id}`}>
-      <a className="no-underline">
-      <Card className="mt-4">
-        <CardActionArea>
-          <div className="w-full relative" style={{paddingBottom: "56.25%"}}>
-            <img className="w-full h-full absolute left-0 top-0 object-cover" src={banner} alt={title}  />
-          </div>
-          <CardContent>
-            <Typography gutterBottom variant="h6" component="h2">
-              {title}
-            </Typography>
+    <Card className="mt-4" onClick={()=>onChange(item)}>
+      <CardActionArea>
+        <div className="w-full relative" style={{paddingBottom: "56.25%"}}>
+          <img className="w-full h-full absolute left-0 top-0 object-cover" src={baseUrl+banner} alt={title}  />
+        </div>
+        <CardContent>
+          <Typography gutterBottom variant="h6" component="h2">
+            {title}
+          </Typography>
 
-            <div className="relative">
-              <Typography variant="body2" color="textSecondary" component="p" className="text-justify overflow-hidden">
-                {desc}
-              </Typography>
-              {/* <div className="absolute bottom-0 left-0 w-full h-6" style={{backgroundImage: "linear-gradient(to bottom, rgba(255,255,255,0.7) , #fff)"}}></div> */}
-            </div>
-          </CardContent>
-        </CardActionArea>
-      </Card>
-      </a>
-    </Link>
+          <div className="relative">
+            <Typography variant="body2" color="textSecondary" component="p" className="text-justify overflow-hidden">
+              {desc}
+            </Typography>
+            {/* <div className="absolute bottom-0 left-0 w-full h-6" style={{backgroundImage: "linear-gradient(to bottom, rgba(255,255,255,0.7) , #fff)"}}></div> */}
+          </div>
+        </CardContent>
+      </CardActionArea>
+    </Card>
   )
 }
 
-    // <Link href={"/stories/[id]"} as={`/stories/${id}`}>
-    //   <div className="cardstory mb-5 rounded-lg overflow-hidden shadow-lg transition delay-150 duration-300 ease-in-out">
-    //     <div className="w-full relative" style={{paddingBottom: "56.25%"}}>
-    //       <img className="w-full h-full absolute left-0 top-0 object-cover" src={banner} alt={title}  />
-    //     </div>
-    //     <div className="px-4 bg-white">
-    //       <h2 className="font-bold text-2xl py-3">{title}</h2>
-    //       <div className="relative">
-    //         <p className="text-gray-700 text-base text-justify h-24">
-    //           {desc}
-    //         </p>
-    //         <div className="absolute bottom-0 left-0 w-full h-12" style={{backgroundImage: "linear-gradient(to bottom, rgba(255,255,255,0.7) , #fff)"}}></div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </Link>
+//     {/*<Link href={"/stories/[id]"} as={`/stories/${id}`}>
+//   <a className="no-underline">*/}
+//   <Card className="mt-4">
+//   <CardActionArea>
+//     <div className="w-full relative" style={{paddingBottom: "56.25%"}}>
+//       <img className="w-full h-full absolute left-0 top-0 object-cover" src={banner} alt={title}  />
+//     </div>
+//     <CardContent>
+//       <Typography gutterBottom variant="h6" component="h2">
+//         {title}
+//       </Typography>
+
+//       <div className="relative">
+//         <Typography variant="body2" color="textSecondary" component="p" className="text-justify overflow-hidden">
+//           {desc}
+//         </Typography>
+//         {/* <div className="absolute bottom-0 left-0 w-full h-6" style={{backgroundImage: "linear-gradient(to bottom, rgba(255,255,255,0.7) , #fff)"}}></div> */}
+//       </div>
+//     </CardContent>
+//   </CardActionArea>
+// </Card>
+// {/*</a>
+// </Link>*/}
 export default CardStory

@@ -1,5 +1,5 @@
 import axios from "axios"
-
+import { OSSHostName } from "../utils/path_maker"
 
 
 const getStories = () =>{
@@ -15,8 +15,8 @@ const getStory = (id) =>{
   })
 }
 
-const getStoryArticle = () =>{
-
+const getStoryArticle = (path) =>{
+  return axios.get(`${OSSHostName}${path}`)
 }
 export {
   getStories,

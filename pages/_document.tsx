@@ -14,9 +14,10 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
-          <link href="//cdn.staticfile.org/tailwindcss/1.4.6/utilities.min.css" rel="stylesheet" />
+          
         </Head>
         <body>
+          <link href="//cdn.staticfile.org/tailwindcss/1.4.6/utilities.min.css" rel="stylesheet" />
           <Main />
           <NextScript />
         </body>

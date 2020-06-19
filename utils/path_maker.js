@@ -1,6 +1,6 @@
 
-const getOSSHostName = () => "//jiushitian.oss-cn-shanghai.aliyuncs.com"
+const OSSHostName = "https://jiushitian.oss-cn-shanghai.aliyuncs.com"
 
 export {
-  getOSSHostName
+  OSSHostName
 }
