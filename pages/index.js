@@ -43,7 +43,7 @@ const Front = ({stories}) =>{
         </ContentWrapper>
       </Container>
       <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
-        <AppBar position="static" className="shadow-none bg-transparent">
+        <AppBar className="shadow bg-white">
           <Toolbar>
             <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
               <Close />
@@ -53,9 +53,7 @@ const Front = ({stories}) =>{
             </Typography>
           </Toolbar>
         </AppBar>
-        <div className="p-2" dangerouslySetInnerHTML={{__html: content}}>
-
-        </div>
+        <div className="p-2 pt-12 mt-2" dangerouslySetInnerHTML={{__html: content}} />
       </Dialog>
     </BaseLayout>
   )
